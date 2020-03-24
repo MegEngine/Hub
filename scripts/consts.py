@@ -1,0 +1,2 @@
+REQUIRED_LANGUAGES = ("zh_CN",)
+ALL_LANGUAGES = ("zh_CN", "en_US")
