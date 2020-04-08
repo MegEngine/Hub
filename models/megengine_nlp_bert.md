@@ -11,16 +11,16 @@ github-link: https://github.com/megengine/models
 
 ```python
 import megengine.hub as hub
-model = megengine.hub.load("megengine/models", "wwm_cased_L-24_H-1024_A-16", pretrained=True)
+model = hub.load("megengine/models", "wwm_cased_L-24_H-1024_A-16", pretrained=True)
 # or any of these variants
-# model = megengine.hub.load("megengine/models", "wwm_cased_L-24_H-1024_A-16", pretrained=True)
-# model = megengine.hub.load("megengine/models", "wwm_uncased_L-24_H-1024_A-16", pretrained=True)
-# model = megengine.hub.load("megengine/models", "cased_L-12_H-768_A-12", pretrained=True)
-# model = megengine.hub.load("megengine/models", "cased_L-24_H-1024_A-16", pretrained=True)
-# model = megengine.hub.load("megengine/models", "uncased_L-12_H-768_A-12", pretrained=True)
-# model = megengine.hub.load("megengine/models", "uncased_L-24_H-1024_A-16", pretrained=True)
-# model = megengine.hub.load("megengine/models", "chinese_L-12_H-768_A-12", pretrained=True)
-# model = megengine.hub.load("megengine/models", "multi_cased_L-12_H-768_A-12", pretrained=True)
+# model = hub.load("megengine/models", "wwm_cased_L-24_H-1024_A-16", pretrained=True)
+# model = hub.load("megengine/models", "wwm_uncased_L-24_H-1024_A-16", pretrained=True)
+# model = hub.load("megengine/models", "cased_L-12_H-768_A-12", pretrained=True)
+# model = hub.load("megengine/models", "cased_L-24_H-1024_A-16", pretrained=True)
+# model = hub.load("megengine/models", "uncased_L-12_H-768_A-12", pretrained=True)
+# model = hub.load("megengine/models", "uncased_L-24_H-1024_A-16", pretrained=True)
+# model = hub.load("megengine/models", "chinese_L-12_H-768_A-12", pretrained=True)
+# model = hub.load("megengine/models", "multi_cased_L-12_H-768_A-12", pretrained=True)
 ```
 
 <!-- section: zh_CN --> 
