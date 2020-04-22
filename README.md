@@ -1,6 +1,7 @@
 # MegEngine Model Hub
 
 本仓库包含了[MegEngine模型中心](https://megengine.org.cn/model-hub/)中的模型配置文件，这些模型都可以用`megengine.hub`直接导入。
+
 MegEngine用户在创建了自己的模型后，只需要按照以下步骤添加配置文件，就可以将自己的模型添加到MegEngine的模型中心中，分享给其他人使用。
 
 ## 如何添加新模型
@@ -12,4 +13,4 @@ MegEngine用户在创建了自己的模型后，只需要按照以下步骤添�
     - `github_link`指向你的仓库中`hub_conf.py`所在的路径
     - 请同时添加中文、英文版本的文档
 - 您可以运行`scripts/generate_data.py --source=../models --output=/your/output/path`生成测试文件（json格式），测试描述文件是否正确。
-- 向本仓库提交Pull Request，通过后你的模型就会出现在[MegEngine官网模型中心](https://megengine.org.cn/model-hub/)中，且可以用`megengine.hub`调用。
+- 向本仓库提交Pull Request，通过后你的模型就会出现在MegEngine模型中心，且可以用`megengine.hub`调用。
