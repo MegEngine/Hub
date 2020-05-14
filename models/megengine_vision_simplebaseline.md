@@ -2,8 +2,8 @@
 template: hub1
 title: SimpleBaseline
 summary:
-    en_US: Deep residual networks pre-trained on ImageNet
-    zh_CN: 深度残差网络（ImageNet 预训练权重）
+    en_US: SimpleBaeline on COCO
+    zh_CN: SimpleBaeline（COCO 预训练权重）
 author: MegEngine Team
 tags: [vision, keypoints]
 github-link: https://github.com/megengine/models
