@@ -18,7 +18,7 @@ model = megengine.hub.load('megengine/models', 'simplebaseline_res50', pretraine
 model.eval()
 ```
 <!-- section: zh_CN --> 
-SimpleBaseline是单人关节点检测模型，在多人场景下需要配合人体检测器使用。详细的多人检测代码示例可以参考[inference.py](https://github.com/megengine/models/official/vision/keypoints/inference.py)。
+SimpleBaseline是单人关节点检测模型，在多人场景下需要配合人体检测器使用。详细的多人检测代码示例可以参考[inference.py](https://github.com/MegEngine/Models/blob/master/official/vision/keypoints/inference.py)。
 
 针对单张图片，这里提供使用retinanet做人体检测，然后用SimpleBaseline检测关节点的示例:
 
@@ -81,7 +81,7 @@ cv2.imwrite("vis_skeleton.jpg", canvas)
 - [Simple Baselines for Human Pose Estimation and Tracking](https://arxiv.org/pdf/1804.06208.pdf), Bin Xiao, Haiping Wu, and Yichen Wei
 
 <!-- section: en_US --> 
-SimpleBaseline is classical network for single person pose estimation. It can also be applied to multi-person cases when combined with a human detector. The details of this pipline can be referred to [inference.py](https://github.com/megengine/models/official/vision/keypoints/inference.py).
+SimpleBaseline is classical network for single person pose estimation. It can also be applied to multi-person cases when combined with a human detector. The details of this pipline can be referred to [inference.py](https://github.com/MegEngine/Models/blob/master/official/vision/keypoints/inference.py).
 
 For single image, here is a sample execution when SimpleBaseline is combined with retinanet
 
