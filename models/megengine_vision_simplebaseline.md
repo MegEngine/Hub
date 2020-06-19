@@ -21,7 +21,6 @@ model.eval()
 SimpleBaseline是单人关节点检测模型，在多人场景下需要配合人体检测器使用。详细的多人检测代码示例可以参考[inference.py](https://github.com/MegEngine/Models/blob/master/official/vision/keypoints/inference.py)。
 
 针对单张图片，这里提供使用retinanet做人体检测，然后用SimpleBaseline检测关节点的示例:
-
 ```python3
 
 import urllib
@@ -33,7 +32,7 @@ except: urllib.request.urlretrieve(url, filename)
 import cv2
 image = cv2.imread("cat.jpg")
 
-import official.vision.detection.retinanet_res50_1x_800size as Det
+import official.vision.detection.retinanet_res50_coco_1x_800size as Det
 detector = Det.retinanet_res50_1x_800size(pretrained=True)
 
 models_api = hub.import_module(
@@ -65,7 +64,7 @@ print("Detecting Keypoints")
 all_keypoints = evaluator.predict(image, person_boxes)
 
 print("Visualizing")
-canvas = evaluator.vis_skeleton(image, all_keypoints)
+canvas = evaluator.vis_skeletons(image, all_keypoints)
 cv2.imwrite("vis_skeleton.jpg", canvas)
 ```
 
@@ -96,7 +95,7 @@ except: urllib.request.urlretrieve(url, filename)
 import cv2
 image = cv2.imread("cat.jpg")
 
-import official.vision.detection.retinanet_res50_1x_800size as Det
+import official.vision.detection.retinanet_res50_coco_1x_800size as Det
 detector = Det.retinanet_res50_1x_800size(pretrained=True)
 
 models_api = hub.import_module(
@@ -128,7 +127,7 @@ print("Detecting Keypoints")
 all_keypoints = evaluator.predict(image, person_boxes)
 
 print("Visualizing")
-canvas = evaluator.vis_skeleton(image, all_keypoints)
+canvas = evaluator.vis_skeletons(image, all_keypoints)
 cv2.imwrite("vis_skeleton.jpg", canvas)
 ```
 ### Model Desription

@@ -30,7 +30,7 @@ except: urllib.request.urlretrieve(url, filename)
 import cv2
 image = cv2.imread("cat.jpg")
 
-import official.vision.detection.retinanet_res50_1x_800size as Det
+import official.vision.detection.retinanet_res50_coco_1x_800size as Det
 detector = Det.retinanet_res50_1x_800size(pretrained=True)
 
 models_api = hub.import_module(
@@ -62,7 +62,7 @@ print("Detecting Keypoints")
 all_keypoints = evaluator.predict(image, person_boxes)
 
 print("Visualizing")
-canvas = evaluator.vis_skeleton(image, all_keypoints)
+canvas = evaluator.vis_skeletons(image, all_keypoints)
 cv2.imwrite("vis_skeleton.jpg", canvas)
 ```
 
@@ -91,7 +91,7 @@ except: urllib.request.urlretrieve(url, filename)
 import cv2
 image = cv2.imread("cat.jpg")
 
-import official.vision.detection.retinanet_res50_1x_800size as Det
+import official.vision.detection.retinanet_res50_coco_1x_800size as Det
 detector = Det.retinanet_res50_1x_800size(pretrained=True)
 
 models_api = hub.import_module(
@@ -123,7 +123,7 @@ print("Detecting Keypoints")
 all_keypoints = evaluator.predict(image, person_boxes)
 
 print("Visualizing")
-canvas = evaluator.vis_skeleton(image, all_keypoints)
+canvas = evaluator.vis_skeletons(image, all_keypoints)
 cv2.imwrite("vis_skeleton.jpg", canvas)
 ```
 ### Model Desription
