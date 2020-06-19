@@ -58,7 +58,7 @@ evaluator = models_api.KeypointEvaluator(
     keypoint_func
     )
 
-print("Detecting Humans")
+print("Detecting Persons")
 person_boxes = evaluator.detect_persons(image)
 
 print("Detecting Keypoints")
@@ -69,7 +69,7 @@ canvas = evaluator.vis_skeleton(image, all_keypoints)
 cv2.imwrite("vis_skeleton.jpg", canvas)
 ```
 
-# 模型描述
+### 模型描述
 本目录使用了在COCO val2017上的Human AP为56.4的人体检测结果，最后在COCO val2017上人体关节点估计结果为
 |Methods|Backbone|Input Size| AP | Ap .5 | AP .75 | AP (M) | AP (L) | AR | AR .5 | AR .75 | AR (M) | AR (L) |
 |---|:---:|---|---|---|---|---|---|---|---|---|---|---|
@@ -77,7 +77,7 @@ cv2.imwrite("vis_skeleton.jpg", canvas)
 | SimpleBaseline |Res101|256x192| 0.722 | 0.891 | 0.795 | 0.687 | 0.795 | 0.794 | 0.936 | 0.855 | 0.745 | 0.863 |
 | SimpleBaseline |Res152|256x192| 0.724 | 0.888 | 0.794 | 0.688 | 0.795 | 0.795 | 0.934 | 0.856 | 0.746 | 0.863 |
 
-# 参考文献
+### 参考文献
 - [Simple Baselines for Human Pose Estimation and Tracking](https://arxiv.org/pdf/1804.06208.pdf), Bin Xiao, Haiping Wu, and Yichen Wei
 
 <!-- section: en_US --> 
@@ -121,7 +121,7 @@ evaluator = models_api.KeypointEvaluator(
     keypoint_func
     )
 
-print("Detecting Humans")
+print("Detecting Persons")
 person_boxes = evaluator.detect_persons(image)
 
 print("Detecting Keypoints")
@@ -131,7 +131,7 @@ print("Visualizing")
 canvas = evaluator.vis_skeleton(image, all_keypoints)
 cv2.imwrite("vis_skeleton.jpg", canvas)
 ```
-# Model Desription
+### Model Desription
 
 With the AP human detectoin results being 56.4 on COCO val2017 dataset, the performances of simplebline on COCO val2017 dataset is 
 
@@ -140,7 +140,6 @@ With the AP human detectoin results being 56.4 on COCO val2017 dataset, the perf
 | SimpleBaseline |Res50 |256x192| 0.712 | 0.887 | 0.779 | 0.673 | 0.785 | 0.782 | 0.932 | 0.839 | 0.730 | 0.854 |
 | SimpleBaseline |Res101|256x192| 0.722 | 0.891 | 0.795 | 0.687 | 0.795 | 0.794 | 0.936 | 0.855 | 0.745 | 0.863 |
 | SimpleBaseline |Res152|256x192| 0.724 | 0.888 | 0.794 | 0.688 | 0.795 | 0.795 | 0.934 | 0.856 | 0.746 | 0.863 |
-| MSPN_4stage |MSPN|256x192| 0.752 | 0.900 | 0.819 | 0.716 | 0.825 | 0.819 | 0.943 | 0.875 | 0.770 | 0.887 |
 
-# References
+### References
 - [Simple Baselines for Human Pose Estimation and Tracking](https://arxiv.org/pdf/1804.06208.pdf), Bin Xiao, Haiping Wu, and Yichen Wei
