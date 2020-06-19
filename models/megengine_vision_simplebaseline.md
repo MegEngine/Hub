@@ -11,10 +11,10 @@ github-link: https://github.com/megengine/models
 
 ```python3
 import megengine.hub
-model = megengine.hub.load('megengine/models', 'SimpleBaseline_Res50', pretrained=True)
+model = megengine.hub.load('megengine/models', 'simplebaseline_res50', pretrained=True)
 # or any of these variants
-# model = megengine.hub.load('megengine/models', 'SimpleBaseline_Res101', pretrained=True)
-# model = megengine.hub.load('megengine/models', 'SimpleBaseline_Res152', pretrained=True)
+# model = megengine.hub.load('megengine/models', 'simplebaseline_res101', pretrained=True)
+# model = megengine.hub.load('megengine/models', 'simplebaseline_res152', pretrained=True)
 model.eval()
 ```
 <!-- section: zh_CN --> 
