@@ -133,7 +133,7 @@ cv2.imwrite("vis_skeleton.jpg", canvas)
 ```
 ### Model Desription
 
-With the AP human detectoin results being 56.4 on COCO val2017 dataset, the performances of simplebline on COCO val2017 dataset is 
+With the AP human detectoin results being 56.4 on COCO val2017 dataset, the performances of simplebline on COCO val2017 dataset are
 
 |Methods|Backbone|Input Size| AP | Ap .5 | AP .75 | AP (M) | AP (L) | AR | AR .5 | AR .75 | AR (M) | AR (L) |
 |---|:---:|---|---|---|---|---|---|---|---|---|---|---|
