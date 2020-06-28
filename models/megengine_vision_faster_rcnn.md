@@ -1,9 +1,9 @@
 ---
 template: hub1
-title: retinanet
+title: Faster-RCNN
 summary:
-    en_US: RetinaNet pre-trained on COCO
-    zh_CN: RetinaNet (COCO预训练权重）
+    en_US: Faster-RCNN pre-trained on COCO
+    zh_CN: Faster-RCNN (COCO预训练权重）
 author: MegEngine Team
 tags: [vision, detection]
 github-link: https://github.com/megengine/models
@@ -13,7 +13,7 @@ github-link: https://github.com/megengine/models
 from megengine import hub
 model = hub.load(
     "megengine/models",
-    "retinanet_res50_coco_1x_800size",
+    "faster_rcnn_fpn_res50_coco_1x_800size",
     pretrained=True,
     use_cache=False,
 )
@@ -61,14 +61,14 @@ print(infer())
 目前我们提供了retinanet的预训练模型, 在coco验证集上的结果如下：
 
 | model                        | mAP<br>@5-95     |  
-| ---                        |     ---          |
-| retinanet-res50-1x-800size |    36.0          |
+| ---                          |     ---          |
+| faster-rcnn-res50-1x-800size |    37.3          |
 
 ### 参考文献
 
-- [Focal Loss for Dense Object Detection](https://arxiv.org/pdf/1708.02002) Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, Piotr Dollár. Proceedings of the IEEE international conference on computer vision. 2017: 2980-2988.
-- [Microsoft COCO: Common Objects in Context](https://arxiv.org/pdf/1405.0312.pdf)  Lin, Tsung-Yi and Maire, Michael and Belongie, Serge and Hays, James and Perona, Pietro and Ramanan, Deva and Dollár, Piotr and Zitnick, C Lawrence
-Lin T Y, Maire M, Belongie S, et al. European conference on computer vision. Springer, Cham, 2014: 740-755.
+- [Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks](https://arxiv.org/pdf/1506.01497.pdf) S. Ren, K. He, R. Girshick, and J. Sun. In: Neural Information Processing Systems(NIPS)(2015).
+- [Feature Pyramid Networks for Object Detection](https://arxiv.org/pdf/1612.03144.pdf) T. Lin, P. Dollár, R. Girshick, K. He, B. Hariharan and S. Belongie. 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Honolulu, HI, 2017, pp. 936-944, doi: 10.1109/CVPR.2017.106.
+- [Microsoft COCO: Common Objects in Context](https://arxiv.org/pdf/1405.0312.pdf)  Lin, Tsung-Yi and Maire, Michael and Belongie, Serge and Hays, James and Perona, Pietro and Ramanan, Deva and Dollár, Piotr and Zitnick, C Lawrence, Lin T Y, Maire M, Belongie S, et al. European conference on computer vision. Springer, Cham, 2014: 740-755.
 
  
 <!-- section: en_US --> 
@@ -108,11 +108,11 @@ print(infer())
 Currently we provide a `retinanet` model which is pretrained on `COCO2017` training set. The mAP on `COCO2017` val set can be found in following table.
 
 | model                        | mAP<br>@5-95     |  
-| ---                        |     ---          |
-| retinanet-res50-1x-800size |    36.0          |
+| ---                          |     ---          |
+| faster-rcnn-res50-1x-800size |    37.3          |
 
 ### References
 
-- [Focal Loss for Dense Object Detection](https://arxiv.org/pdf/1708.02002) Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, Piotr Dollár. Proceedings of the IEEE international conference on computer vision. 2017: 2980-2988.
-- [Microsoft COCO: Common Objects in Context](https://arxiv.org/pdf/1405.0312.pdf)  Lin, Tsung-Yi and Maire, Michael and Belongie, Serge and Hays, James and Perona, Pietro and Ramanan, Deva and Dollár, Piotr and Zitnick, C Lawrence
-Lin T Y, Maire M, Belongie S, et al. European conference on computer vision. Springer, Cham, 2014: 740-755.
+- [Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks](https://arxiv.org/pdf/1506.01497.pdf) S. Ren, K. He, R. Girshick, and J. Sun. In: Neural Information Processing Systems(NIPS)(2015).
+- [Feature Pyramid Networks for Object Detection](https://arxiv.org/pdf/1612.03144.pdf) T. Lin, P. Dollár, R. Girshick, K. He, B. Hariharan and S. Belongie. 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Honolulu, HI, 2017, pp. 936-944, doi: 10.1109/CVPR.2017.106.
+- [Microsoft COCO: Common Objects in Context](https://arxiv.org/pdf/1405.0312.pdf)  Lin, Tsung-Yi and Maire, Michael and Belongie, Serge and Hays, James and Perona, Pietro and Ramanan, Deva and Dollár, Piotr and Zitnick, C Lawrence, Lin T Y, Maire M, Belongie S, et al. European conference on computer vision. Springer, Cham, 2014: 740-755.
