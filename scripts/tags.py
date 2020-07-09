@@ -16,5 +16,6 @@ TAGS = [
     Tag(id="detection", name={"zh_CN": "检测", "en_US": "Detection"}),
     Tag(id="classification", name={"zh_CN": "分类", "en_US": "Classification"}),
     Tag(id="gan", name={"zh_CN": "生成对抗网络", "en_US": "GAN"}),
+    Tag(id="keypoints", name={"zh_CN": "特征点检测", "en_US": "Keypoints"}),
     Tag(id="nlp", name={"zh_CN": "自然语言处理", "en_US": "NLP"}),
 ]
