@@ -16,6 +16,7 @@ model = megengine.hub.load('megengine/models', 'resnet18', pretrained=True)
 # model = megengine.hub.load('megengine/models', 'resnet34', pretrained=True)
 # model = megengine.hub.load('megengine/models', 'resnet50', pretrained=True)
 # model = megengine.hub.load('megengine/models', 'resnet101', pretrained=True)
+# model = megengine.hub.load('megengine/models', 'resnet152', pretrained=True)
 # model = megengine.hub.load('megengine/models', 'resnext50_32x4d', pretrained=True)
 model.eval()
 ```
@@ -54,7 +55,7 @@ print(probs)
 
 ### 模型描述
 
-目前我们提供了以下几个预训练模型，分别是`resnet18`, `resnet34`, `resnet50`, `resnet101`，`resnext50_32x4d`，它们在ImageNet验证集上的单crop性能如下表：
+目前我们提供了以下几个预训练模型，分别是`resnet18`, `resnet34`, `resnet50`, `resnet101`，`resnet152`, `resnext50_32x4d`，它们在ImageNet验证集上的单crop性能如下表：
 
 | 模型 | Top1 acc | Top5 acc |
 | --- | --- | --- |
@@ -62,6 +63,7 @@ print(probs)
 | ResNet34 |  73.960  |  91.630  | 
 | ResNet50 |  76.254  |  93.056  | 
 | ResNet101|  77.944  |  93.844  | 
+| ResNet152|  78.582  |  94.130  |
 | ResNeXt50 32x4d | 77.592 | 93.644 |
 
 ### 参考文献
@@ -105,7 +107,7 @@ print(probs)
 
 ### Model Description
 
-Currently we provide these pretrained models: `resnet18`, `resnet34`, `resnet50`, `resnet101`, `resnext50_32x4d`. Their 1-crop accuracy on ImageNet validation dataset can be found in following table.
+Currently we provide these pretrained models: `resnet18`, `resnet34`, `resnet50`, `resnet101`, `resnet152`, `resnext50_32x4d`. Their 1-crop accuracy on ImageNet validation dataset can be found in following table.
 
 | model | Top1 acc | Top5 acc |
 | --- | --- | --- |
@@ -113,6 +115,7 @@ Currently we provide these pretrained models: `resnet18`, `resnet34`, `resnet50`
 | ResNet34 |  73.960  |  91.630  | 
 | ResNet50 |  76.254  |  93.056  | 
 | ResNet101|  77.944  |  93.844  | 
+| ResNet152|  78.582  |  94.130  |
 | ResNeXt50 32x4d | 77.592 | 93.644 |
 
 ### References

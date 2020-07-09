@@ -1,9 +1,9 @@
 ---
 template: hub1
-title: deeplabv3plus
+title: DeepLabV3plus
 summary:
-    en_US: Deeplabv3plus pre-trained on VOC
-    zh_CN: Deeplabv3plus (VOC预训练权重）
+    en_US: DeepLabV3plus pre-trained on VOC
+    zh_CN: DeepLabV3plus (VOC预训练权重）
 author: MegEngine Team
 tags: [vision]
 github-link: https://github.com/megengine/models
@@ -61,7 +61,7 @@ pred = cv2.resize(pred.astype("uint8"), (oriw, orih), interpolation=cv2.INTER_LI
 
 ### 模型描述
 
-目前我们提供了deeplabv3plus的预训练模型, 在voc验证集的表现如下：
+目前我们提供了 deeplabv3plus 的预训练模型, 在voc验证集的表现如下：
 
  Methods     | Backbone    | TrainSet  | EvalSet | mIoU_single   | mIoU_multi  |
  :--:        |:--:         |:--:       |:--:     |:--:           |:--:         |

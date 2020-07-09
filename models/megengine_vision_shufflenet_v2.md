@@ -1,6 +1,6 @@
 ---
 template: hub1
-title: ResNet
+title: ShuffleNet V2
 summary:
     en_US: "ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"
     zh_CN: ShuffleNet V2（ImageNet 预训练权重）
@@ -12,6 +12,9 @@ github-link: https://github.com/megengine/models
 ```python
 import megengine.hub
 model = megengine.hub.load('megengine/models', 'shufflenet_v2_x1_0', pretrained=True)
+# model = megengine.hub.load('megengine/models', 'shufflenet_v2_x0_5', pretrained=True)
+# model = megengine.hub.load('megengine/models', 'shufflenet_v2_x1_5', pretrained=True)
+# model = megengine.hub.load('megengine/models', 'shufflenet_v2_x2_0', pretrained=True)
 model.eval()
 ```
 <!-- section: zh_CN --> 
@@ -53,7 +56,10 @@ print(probs)
 
 | 模型 | top1 acc | top5 acc |
 | --- | --- | --- |
-| shufflenet_v2_x1_0 |  69.369  |  88.793  |
+| ShuffleNetV2 x0.5 |  60.696  |  82.190  | 
+| ShuffleNetV2 x1.0 |  69.372  |  88.764  | 
+| ShuffleNetV2 x1.5 |  72.806  |  90.792  | 
+| ShuffleNetV2 x2.0 |  75.074  |  92.278  | 
 
 ### 参考文献
 
@@ -99,7 +105,10 @@ Currently we provide several pretrained models(see the table below), Their 1-cro
 
 | model | top1 acc | top5 acc |
 | --- | --- | --- |
-| shufflenet_v2_x1_0 |  69.369  |  88.793  |
+| ShuffleNetV2 x0.5 |  60.696  |  82.190  | 
+| ShuffleNetV2 x1.0 |  69.372  |  88.764  | 
+| ShuffleNetV2 x1.5 |  72.806  |  90.792  | 
+| ShuffleNetV2 x2.0 |  75.074  |  92.278  | 
 
 ### References
 

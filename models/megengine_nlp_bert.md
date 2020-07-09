@@ -11,16 +11,16 @@ github-link: https://github.com/megengine/models
 
 ```python
 import megengine.hub as hub
-model = hub.load("megengine/models", "wwm_cased_L-24_H-1024_A-16", pretrained=True)
+model = megengine.hub.load("megengine/models", "wwm_cased_L-24_H-1024_A-16", pretrained=True)
 # or any of these variants
-# model = hub.load("megengine/models", "wwm_cased_L-24_H-1024_A-16", pretrained=True)
-# model = hub.load("megengine/models", "wwm_uncased_L-24_H-1024_A-16", pretrained=True)
-# model = hub.load("megengine/models", "cased_L-12_H-768_A-12", pretrained=True)
-# model = hub.load("megengine/models", "cased_L-24_H-1024_A-16", pretrained=True)
-# model = hub.load("megengine/models", "uncased_L-12_H-768_A-12", pretrained=True)
-# model = hub.load("megengine/models", "uncased_L-24_H-1024_A-16", pretrained=True)
-# model = hub.load("megengine/models", "chinese_L-12_H-768_A-12", pretrained=True)
-# model = hub.load("megengine/models", "multi_cased_L-12_H-768_A-12", pretrained=True)
+# model = megengine.hub.load("megengine/models", "wwm_cased_L-24_H-1024_A-16", pretrained=True)
+# model = megengine.hub.load("megengine/models", "wwm_uncased_L-24_H-1024_A-16", pretrained=True)
+# model = megengine.hub.load("megengine/models", "cased_L-12_H-768_A-12", pretrained=True)
+# model = megengine.hub.load("megengine/models", "cased_L-24_H-1024_A-16", pretrained=True)
+# model = megengine.hub.load("megengine/models", "uncased_L-12_H-768_A-12", pretrained=True)
+# model = megengine.hub.load("megengine/models", "uncased_L-24_H-1024_A-16", pretrained=True)
+# model = megengine.hub.load("megengine/models", "chinese_L-12_H-768_A-12", pretrained=True)
+# model = megengine.hub.load("megengine/models", "multi_cased_L-12_H-768_A-12", pretrained=True)
 ```
 
 <!-- section: zh_CN --> 
@@ -147,7 +147,7 @@ We provide the following pre-trained models for users to finetune in different t
 * `chinese_L-12_H-768_A-12`
 * `multi_cased_L-12_H-768_A-12`
 
-The weight of the model comes from Google's pre-trained models, and its meaning is also consistent with it. Users can use `megengine.hub` to easily use the pre-trained bert model, and download the corresponding` vocab.txt` and `bert_config.json`. We also provide a convenient script in [models] (https://github.com/megengine/models/official/nlp/bert), which can directly obtain the corresponding dictionary, configuration, and pre-trained model by task name. .
+The weight of the model comes from Google's pre-trained models, and its meaning is also consistent with it. Users can use `megengine.hub` to easily use the pre-trained bert model, and download the corresponding` vocab.txt` and `bert_config.json`. We also provide a convenient script in [models](https://github.com/megengine/models/official/nlp/bert), which can directly obtain the corresponding dictionary, configuration, and pre-trained model by task name. .
 
 ```python
 import megengine.hub as hub
@@ -229,11 +229,11 @@ bert, config, vocab_file = create_hub_bert('uncased_L-12_H-768_A-12', pretrained
 model = BertForSequenceClassification(config, num_labels=2, bert=bert)
 ```
 
-All pre-trained models expect the data to be pre-processed correctly. The requirements are consistent with the Google's bert. For details, please refer to original [bert] (https://github.com/google-research/bert), or refer to our example [models] ( https://github.com/megengine/models/official/nlp/bert).
+All pre-trained models expect the data to be pre-processed correctly. The requirements are consistent with the Google's bert. For details, please refer to original [bert](https://github.com/google-research/bert), or refer to our example [models](https://github.com/megengine/models/official/nlp/bert).
 
 
 ### Model Description
-We provide example code in [models] (https://github.com/megengine/models/official/nlp/bert).
+We provide example code in [models](https://github.com/megengine/models/official/nlp/bert).
 This example code fine-tunes the pre-trained `uncased_L-12_H-768_A-12` model on the Microsoft Research Paraphrase (MRPC) dataset. 
 
 Our test ran on the original implementation hyper-parameters gave evaluation results between 84% and 88%.

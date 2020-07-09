@@ -1,6 +1,6 @@
 ---
 template: hub1
-title: retinanet
+title: RetinaNet
 summary:
     en_US: RetinaNet pre-trained on COCO
     zh_CN: RetinaNet (COCO预训练权重）
@@ -13,9 +13,8 @@ github-link: https://github.com/megengine/models
 from megengine import hub
 model = hub.load(
     "megengine/models",
-    "retinanet_res50_coco_1x_800size",
+    "retinanet_res50_1x_800size",
     pretrained=True,
-    use_cache=False,
 )
 model.eval()
 
