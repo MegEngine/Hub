@@ -9,6 +9,18 @@ tags: [vision, gan]
 github-link: https://github.com/MegEngine/Models/tree/master/official/vision/gan
 ---
 
+```python3
+import megengine.hub as hub
+import megengine_mimicry.nets.dcgan.dcgan_cifar as dcgan
+import megengine_mimicry.utils.vis as vis
+
+netG = dcgan.DCGANGeneratorCIFAR()
+netG.load_state_dict(hub.load_serialized_obj_from_url("https://data.megengine.org.cn/models/weights/dcgan_cifar.pkl"))
+images = dcgan_generator.generate_images(num_images=64)  # in NCHW format with normalized pixel values in [0, 1]
+grid = vis.make_grid(images)  # in HW3 format with [0, 255] BGR images for visualization
+vis.save_image(grid, "visual.png")
+```
+
 <!-- section: zh_CN -->
 
 #### 训练参数
