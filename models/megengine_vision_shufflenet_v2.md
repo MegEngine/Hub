@@ -6,7 +6,7 @@ summary:
     zh_CN: ShuffleNet V2（ImageNet 预训练权重）
 author: MegEngine Team
 tags: [vision, classification]
-github-link: https://github.com/megengine/models
+github-link: https://github.com/MegEngine/Models/tree/master/official/vision/classification
 ---
 
 ```python
@@ -17,7 +17,7 @@ model = megengine.hub.load('megengine/models', 'shufflenet_v2_x1_0', pretrained=
 # model = megengine.hub.load('megengine/models', 'shufflenet_v2_x2_0', pretrained=True)
 model.eval()
 ```
-<!-- section: zh_CN --> 
+<!-- section: zh_CN -->
 
 所有预训练模型希望数据被正确预处理。
 模型要求输入BGR的图片, 短边缩放到`256`, 并中心裁剪至`(224 x 224)`的大小，最后做归一化处理 (均值为: `[103.530, 116.280, 123.675]`, 标准差为: `[57.375, 57.120, 58.395]`)。
@@ -56,16 +56,16 @@ print(probs)
 
 | 模型 | top1 acc | top5 acc |
 | --- | --- | --- |
-| ShuffleNetV2 x0.5 |  60.696  |  82.190  | 
-| ShuffleNetV2 x1.0 |  69.372  |  88.764  | 
-| ShuffleNetV2 x1.5 |  72.806  |  90.792  | 
-| ShuffleNetV2 x2.0 |  75.074  |  92.278  | 
+| ShuffleNetV2 x0.5 |  60.696  |  82.190  |
+| ShuffleNetV2 x1.0 |  69.372  |  88.764  |
+| ShuffleNetV2 x1.5 |  72.806  |  90.792  |
+| ShuffleNetV2 x2.0 |  75.074  |  92.278  |
 
 ### 参考文献
 
 - [ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design](https://arxiv.org/abs/1807.11164), Ma, Ningning, et al. "Shufflenet v2: Practical guidelines for efficient cnn architecture design." Proceedings of the European Conference on Computer Vision (ECCV). 2018.
 
-<!-- section: en_US --> 
+<!-- section: en_US -->
 
 All pre-trained models expect input images normalized in the same way,
 i.e. input images must be 3-channel BGR images of shape `(H x W x 3)`, and reszied shortedge to `256`, center-cropped to `(224 x 224)`.
@@ -105,10 +105,10 @@ Currently we provide several pretrained models(see the table below), Their 1-cro
 
 | model | top1 acc | top5 acc |
 | --- | --- | --- |
-| ShuffleNetV2 x0.5 |  60.696  |  82.190  | 
-| ShuffleNetV2 x1.0 |  69.372  |  88.764  | 
-| ShuffleNetV2 x1.5 |  72.806  |  90.792  | 
-| ShuffleNetV2 x2.0 |  75.074  |  92.278  | 
+| ShuffleNetV2 x0.5 |  60.696  |  82.190  |
+| ShuffleNetV2 x1.0 |  69.372  |  88.764  |
+| ShuffleNetV2 x1.5 |  72.806  |  90.792  |
+| ShuffleNetV2 x2.0 |  75.074  |  92.278  |
 
 ### References
 

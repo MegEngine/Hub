@@ -6,7 +6,7 @@ summary:
     zh_CN: BERT
 author: MegEngine Team
 tags: [nlp]
-github-link: https://github.com/megengine/models
+github-link: https://github.com/MegEngine/Models/tree/master/official/nlp/bert
 ---
 
 ```python
@@ -23,7 +23,7 @@ model = megengine.hub.load("megengine/models", "wwm_cased_L-24_H-1024_A-16", pre
 # model = megengine.hub.load("megengine/models", "multi_cased_L-12_H-768_A-12", pretrained=True)
 ```
 
-<!-- section: zh_CN --> 
+<!-- section: zh_CN -->
 
 这个项目中, 我们用MegEngine重新实现了Google开源的BERT模型.
 
@@ -72,21 +72,21 @@ def create_hub_bert(model_name, pretrained):
 
     vocab_url = '{}/{}/{}'.format(DATA_URL, model_name, VOCAB_NAME)
     config_url = '{}/{}/{}'.format(DATA_URL, model_name, CONFIG_NAME)
-    
+
     vocab_file = './{}/{}'.format(model_name, VOCAB_NAME)
     config_file = './{}/{}'.format(model_name, CONFIG_NAME)
-    
+
     download_file(vocab_url, vocab_file)
     download_file(config_url, config_file)
 
     config = BertConfig(config_file)
 
     model = hub.load(
-        "megengine/models", 
-        MODEL_NAME[model_name], 
+        "megengine/models",
+        MODEL_NAME[model_name],
         pretrained=pretrained,
     )
-    
+
     return model, config, vocab_file
 ```
 
@@ -102,14 +102,14 @@ class BertForSequenceClassification(Module):
 
     def forward(self, input_ids, token_type_ids=None, attention_mask=None, labels=None):
         _, pooled_output = self.bert(
-            input_ids, token_type_ids, 
+            input_ids, token_type_ids,
             attention_mask, output_all_encoded_layers=False)
         pooled_output = self.dropout(pooled_output)
         logits = self.classifier(pooled_output)
 
         if labels is not None:
             loss = cross_entropy_with_softmax(
-                logits.reshape(-1, self.num_labels), 
+                logits.reshape(-1, self.num_labels),
                 labels.reshape(-1))
             return logits, loss
         else:
@@ -123,7 +123,7 @@ model = BertForSequenceClassification(config, num_labels=2, bert=bert)
 
 ### 模型描述
 
-我们在[models](https://github.com/megengine/models/official/nlp/bert)中提供了简单的示例代码. 
+我们在[models](https://github.com/megengine/models/official/nlp/bert)中提供了简单的示例代码.
 此示例代码在Microsoft Research Paraphrase（MRPC）数据集上对预训练的`uncased_L-12_H-768_A-12`模型进行微调.
 
 我们的样例代码中使用了原始的超参进行微调, 在测试集中可以得到84％到88％的正确率.
@@ -131,9 +131,9 @@ model = BertForSequenceClassification(config, num_labels=2, bert=bert)
 ### 参考文献
 
  - [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805), Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova;
- 
 
-<!-- section: en_US --> 
+
+<!-- section: en_US -->
 This repository contains reimplemented Google's BERT by MegEngine.
 
 We provide the following pre-trained models for users to finetune in different tasks.
@@ -181,21 +181,21 @@ def create_hub_bert(model_name, pretrained):
 
     vocab_url = '{}/{}/{}'.format(DATA_URL, model_name, VOCAB_NAME)
     config_url = '{}/{}/{}'.format(DATA_URL, model_name, CONFIG_NAME)
-    
+
     vocab_file = './{}/{}'.format(model_name, VOCAB_NAME)
     config_file = './{}/{}'.format(model_name, CONFIG_NAME)
-    
+
     download_file(vocab_url, vocab_file)
     download_file(config_url, config_file)
 
     config = BertConfig(config_file)
 
     model = hub.load(
-        "megengine/models", 
-        MODEL_NAME[model_name], 
+        "megengine/models",
+        MODEL_NAME[model_name],
         pretrained=pretrained,
     )
-    
+
     return model, config, vocab_file
 ```
 
@@ -212,14 +212,14 @@ class BertForSequenceClassification(Module):
 
     def forward(self, input_ids, token_type_ids=None, attention_mask=None, labels=None):
         _, pooled_output = self.bert(
-            input_ids, token_type_ids, 
+            input_ids, token_type_ids,
             attention_mask, output_all_encoded_layers=False)
         pooled_output = self.dropout(pooled_output)
         logits = self.classifier(pooled_output)
 
         if labels is not None:
             loss = cross_entropy_with_softmax(
-                logits.reshape(-1, self.num_labels), 
+                logits.reshape(-1, self.num_labels),
                 labels.reshape(-1))
             return logits, loss
         else:
@@ -234,11 +234,11 @@ All pre-trained models expect the data to be pre-processed correctly. The requir
 
 ### Model Description
 We provide example code in [models](https://github.com/megengine/models/official/nlp/bert).
-This example code fine-tunes the pre-trained `uncased_L-12_H-768_A-12` model on the Microsoft Research Paraphrase (MRPC) dataset. 
+This example code fine-tunes the pre-trained `uncased_L-12_H-768_A-12` model on the Microsoft Research Paraphrase (MRPC) dataset.
 
 Our test ran on the original implementation hyper-parameters gave evaluation results between 84% and 88%.
 
 
 ### References
  - [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805), Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova;
- 
+

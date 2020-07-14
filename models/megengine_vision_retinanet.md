@@ -6,15 +6,16 @@ summary:
     zh_CN: RetinaNet (COCO预训练权重）
 author: MegEngine Team
 tags: [vision, detection]
-github-link: https://github.com/megengine/models
+github-link: https://github.com/MegEngine/Models/tree/master/official/vision/detection
 ---
 
 ```python
 from megengine import hub
 model = hub.load(
     "megengine/models",
-    "retinanet_res50_1x_800size",
+    "retinanet_res50_coco_1x_800size",
     pretrained=True,
+    use_cache=False,
 )
 model.eval()
 
@@ -23,7 +24,7 @@ models_api = hub.import_module(
     git_host="github.com",
 )
 ```
-<!-- section: zh_CN --> 
+<!-- section: zh_CN -->
 
 所有预训练模型希望数据被正确预处理。
 模型要求输入BGR的图片, 同时需要等比例缩放到：短边和长边分别不超过800/1333
@@ -51,7 +52,7 @@ from megengine import jit
 def infer():
     predictions = model(model.inputs)
     return predictions
-    
+
 print(infer())
 ```
 
@@ -59,9 +60,10 @@ print(infer())
 
 目前我们提供了retinanet的预训练模型, 在coco验证集上的结果如下：
 
-| model                        | mAP<br>@5-95     |  
-| ---                        |     ---          |
-| retinanet-res50-1x-800size |    36.0          |
+| model                                 | mAP<br>@5-95 |
+| ---                                   | :---:        |
+| retinanet-res50-coco1x-800size        | 36.4         |
+| retinanet-res50-coco1x-800size-syncbn | 37.1         |
 
 ### 参考文献
 
@@ -69,8 +71,8 @@ print(infer())
 - [Microsoft COCO: Common Objects in Context](https://arxiv.org/pdf/1405.0312.pdf)  Lin, Tsung-Yi and Maire, Michael and Belongie, Serge and Hays, James and Perona, Pietro and Ramanan, Deva and Dollár, Piotr and Zitnick, C Lawrence
 Lin T Y, Maire M, Belongie S, et al. European conference on computer vision. Springer, Cham, 2014: 740-755.
 
- 
-<!-- section: en_US --> 
+
+<!-- section: en_US -->
 
 All pre-trained models expect input images normalized in the same way,
 i.e. input images must be 3-channel BGR images of shape `(H x W x 3)`, and reszied shortedge/longedge to no more than `800/1333`.
@@ -98,7 +100,7 @@ from megengine import jit
 def infer():
     predictions = model(model.inputs)
     return predictions
-    
+
 print(infer())
 ```
 
@@ -106,9 +108,10 @@ print(infer())
 
 Currently we provide a `retinanet` model which is pretrained on `COCO2017` training set. The mAP on `COCO2017` val set can be found in following table.
 
-| model                        | mAP<br>@5-95     |  
-| ---                        |     ---          |
-| retinanet-res50-1x-800size |    36.0          |
+| model                                 | mAP<br>@5-95 |
+| ---                                   | :---:        |
+| retinanet-res50-coco1x-800size        | 36.4         |
+| retinanet-res50-coco1x-800size-syncbn | 37.1         |
 
 ### References
 

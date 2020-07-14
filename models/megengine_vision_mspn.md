@@ -6,7 +6,7 @@ summary:
     zh_CN: MSPN（COCO 预训练权重）
 author: MegEngine Team
 tags: [vision, keypoints]
-github-link: https://github.com/megengine/models
+github-link: https://github.com/MegEngine/Models/tree/master/official/vision/keypoints
 ---
 
 ```python3
@@ -14,7 +14,7 @@ import megengine.hub
 model = megengine.hub.load('megengine/models', 'mspn_4stage', pretrained=True)
 model.eval()
 ```
-<!-- section: zh_CN --> 
+<!-- section: zh_CN -->
 MSPN是单人关节点检测模型，在多人场景下需要配合人体检测器使用。详细的多人检测代码示例可以参考[inference.py](https://github.com/MegEngine/Models/blob/master/official/vision/keypoints/inference.py)。
 
 针对单张图片，这里提供使用retinanet做人体检测，然后用MSPN检测关节点的示例:
@@ -75,7 +75,7 @@ cv2.imwrite("vis_skeleton.jpg", canvas)
 ### 参考文献
 - [Rethinking on Multi-Stage Networks for Human Pose Estimation](https://arxiv.org/pdf/1901.00148.pdf) Wenbo Li1, Zhicheng Wang, Binyi Yin, Qixiang Peng, Yuming Du, Tianzi Xiao, Gang Yu, Hongtao Lu, Yichen Wei and Jian Sun
 
-<!-- section: en_US --> 
+<!-- section: en_US -->
 SimpleBaseline is classical network for single person pose estimation. It can also be applied to multi-person cases when combined with a human detector. The details of this pipline can be referred to [inference.py](https://github.com/MegEngine/Models/blob/master/official/vision/keypoints/inference.py).
 
 For single image, here is a sample execution when SimpleBaseline is combined with retinanet
@@ -128,7 +128,7 @@ cv2.imwrite("vis_skeleton.jpg", canvas)
 ```
 ### Model Desription
 
-With the AP human detectoin results being 56.4 on COCO val2017 dataset, the performances of simplebline on COCO val2017 dataset is 
+With the AP human detectoin results being 56.4 on COCO val2017 dataset, the performances of simplebline on COCO val2017 dataset is
 
 |Methods|Backbone|Input Size| AP | Ap .5 | AP .75 | AP (M) | AP (L) | AR | AR .5 | AR .75 | AR (M) | AR (L) |
 |---|:---:|---|---|---|---|---|---|---|---|---|---|---|
