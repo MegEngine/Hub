@@ -6,7 +6,7 @@ summary:
     zh_CN: DeepLabV3plus (VOC预训练权重）
 author: MegEngine Team
 tags: [vision]
-github-link: https://github.com/megengine/models
+github-link: https://github.com/MegEngine/Models/tree/master/official/vision/segmentation
 ---
 
 ```python
@@ -18,15 +18,15 @@ model = hub.load(
 )
 model.eval()
 ```
-<!-- section: zh_CN --> 
+<!-- section: zh_CN -->
 
 所有预训练模型希望数据被正确预处理。模型要求输入BGR的图片, 建议缩放到512x512，最后做归一化处理 (均值为: `[103.530, 116.280, 123.675]`, 标准差为: `[57.375, 57.120, 58.395]`)。
 
 
 下面是一段处理一张图片的样例代码。
 
-```python 
-# Download an example image from the megengine data website 
+```python
+# Download an example image from the megengine data website
 import urllib
 url, filename = ("https://data.megengine.org.cn/images/cat.jpg", "cat.jpg")
 try: urllib.URLopener().retrieve(url, filename)
@@ -72,14 +72,14 @@ pred = cv2.resize(pred.astype("uint8"), (oriw, orih), interpolation=cv2.INTER_LI
 - [Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation](https://arxiv.org/abs/1802.02611.pdf), Liang-Chieh Chen, Yukun Zhu, George Papandreou, Florian Schroff, and
 Hartwig Adam; ECCV, 2018
 
-<!-- section: en_US --> 
+<!-- section: en_US -->
 
 All pre-trained models expect input images normalized in the same way. Input images must be 3-channel BGR images of shape (H x W x 3), reszied to (512 x 512), then normalized using mean = [103.530, 116.280, 123.675] and std = [57.375, 57.120, 58.395]).
 
 Here's a sample execution.
 
-```python 
-# Download an example image from the megengine data website 
+```python
+# Download an example image from the megengine data website
 import urllib
 url, filename = ("https://data.megengine.org.cn/images/cat.jpg", "cat.jpg")
 try: urllib.URLopener().retrieve(url, filename)

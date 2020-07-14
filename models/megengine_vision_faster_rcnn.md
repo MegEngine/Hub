@@ -6,7 +6,7 @@ summary:
     zh_CN: Faster-RCNN (COCO预训练权重）
 author: MegEngine Team
 tags: [vision, detection]
-github-link: https://github.com/megengine/models
+github-link: https://github.com/MegEngine/Models/tree/master/official/vision/detection
 ---
 
 ```python
