@@ -6,7 +6,7 @@ summary:
     zh_CN: FReLU （ImageNet 预训练权重）
 author: MegEngine Team
 tags: [vision, classification]
-github-link: https://github.com/MegEngine/Models/tree/master/official/vision/classification
+github-link: https://github.com/megvii-model/FunnelAct
 ---
 
 ```python
