@@ -11,7 +11,7 @@ github-link: https://github.com/megvii-model/FunnelAct
 
 ```python
 import megengine.hub
-model = megengine.hub.load('megengine/models', 'resnet50_frelu', pretrained=True)
+model = megengine.hub.load('megvii-model/funnelact', 'resnet50_frelu', pretrained=True)
 model.eval()
 ```
 <!-- section: zh_CN -->
