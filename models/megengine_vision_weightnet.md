@@ -11,10 +11,7 @@ github-link: https://github.com/megvii-model/WeightNet
 
 ```python
 import megengine.hub
-model = megengine.hub.load('megengine/models', 'shufflenet_v2_x0_5', pretrained=True)
-# model = megengine.hub.load('megengine/models', 'shufflenet_v2_x1_0', pretrained=True)
-# model = megengine.hub.load('megengine/models', 'shufflenet_v2_x1_5', pretrained=True)
-# model = megengine.hub.load('megengine/models', 'shufflenet_v2_x2_0', pretrained=True)
+model = megengine.hub.load('megvii-model/weightnet', 'shufflenet_v2_x0_5', pretrained=True)
 model.eval()
 ```
 <!-- section: zh_CN -->
