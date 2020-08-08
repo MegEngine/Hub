@@ -70,7 +70,7 @@ print(probs)
 
 All pre-trained models expect input images normalized in the same way,
 i.e. input images must be 3-channel BGR images of shape `(H x W x 3)`, and reszied shortedge to `256`, center-cropped to `(224 x 224)`.
-The images should be normalized using `mean = [103.530, 116.280, 123.675]` and `std = [57.375, 57.120, 58.395])`.
+No normalization required.
 
 Here's a sample execution.
 
@@ -91,7 +91,7 @@ image = cv2.imread("cat.jpg")
 transform = T.Compose([
     T.Resize(256),
     T.CenterCrop(224),
-    T.Normalize(mean=[103.530, 116.280, 123.675], std=[57.375, 57.120, 58.395]),  # BGR
+   # T.Normalize(mean=[103.530, 116.280, 123.675], std=[57.375, 57.120, 58.395]),  # BGR
     T.ToMode("CHW"),
 ])
 processed_img = transform.apply(image)[np.newaxis, :]  # CHW -> 1CHW
