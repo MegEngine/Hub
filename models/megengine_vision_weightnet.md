@@ -17,7 +17,7 @@ model.eval()
 <!-- section: zh_CN -->
 
 所有预训练模型希望数据被正确预处理。
-模型要求输入BGR的图片, 短边缩放到`256`, 并中心裁剪至`(224 x 224)`的大小，最后做归一化处理 (均值为: `[103.530, 116.280, 123.675]`, 标准差为: `[57.375, 57.120, 58.395]`)。
+模型要求输入BGR的图片, 短边缩放到`256`, 并中心裁剪至`(224 x 224)`的大小，无需归一化处理。
 
 下面是一段处理一张图片的样例代码。
 
@@ -38,7 +38,7 @@ image = cv2.imread("cat.jpg")
 transform = T.Compose([
     T.Resize(256),
     T.CenterCrop(224),
-    T.Normalize(mean=[103.530, 116.280, 123.675], std=[57.375, 57.120, 58.395]),  # BGR
+   # T.Normalize(mean=[103.530, 116.280, 123.675], std=[57.375, 57.120, 58.395]),  # BGR
     T.ToMode("CHW"),
 ])
 processed_img = transform.apply(image)[np.newaxis, :]  # CHW -> 1CHW
@@ -84,7 +84,7 @@ print(probs)
 
 All pre-trained models expect input images normalized in the same way,
 i.e. input images must be 3-channel BGR images of shape `(H x W x 3)`, and reszied shortedge to `256`, center-cropped to `(224 x 224)`.
-The images should be normalized using `mean = [103.530, 116.280, 123.675]` and `std = [57.375, 57.120, 58.395])`.
+No normalizations required.
 
 Here's a sample execution.
 
@@ -105,7 +105,7 @@ image = cv2.imread("cat.jpg")
 transform = T.Compose([
     T.Resize(256),
     T.CenterCrop(224),
-    T.Normalize(mean=[103.530, 116.280, 123.675], std=[57.375, 57.120, 58.395]),  # BGR
+   # T.Normalize(mean=[103.530, 116.280, 123.675], std=[57.375, 57.120, 58.395]),  # BGR
     T.ToMode("CHW"),
 ])
 processed_img = transform.apply(image)[np.newaxis, :]  # CHW -> 1CHW
