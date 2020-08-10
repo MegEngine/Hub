@@ -34,7 +34,7 @@ import numpy as np
 import megengine.data.transform as T
 import megengine.functional as F
 
-image = cv2.imread("cat.jpg")
+image = cv2.imread("cat.jpg").astype(np.float32)
 transform = T.Compose([
     T.Resize(256),
     T.CenterCrop(224),
@@ -101,7 +101,7 @@ import numpy as np
 import megengine.data.transform as T
 import megengine.functional as F
 
-image = cv2.imread("cat.jpg")
+image = cv2.imread("cat.jpg").astype(np.float32)
 transform = T.Compose([
     T.Resize(256),
     T.CenterCrop(224),
