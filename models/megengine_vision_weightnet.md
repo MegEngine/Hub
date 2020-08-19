@@ -38,7 +38,6 @@ image = cv2.imread("cat.jpg").astype(np.float32)
 transform = T.Compose([
     T.Resize(256),
     T.CenterCrop(224),
-   # T.Normalize(mean=[103.530, 116.280, 123.675], std=[57.375, 57.120, 58.395]),  # BGR
     T.ToMode("CHW"),
 ])
 processed_img = transform.apply(image)[np.newaxis, :]  # CHW -> 1CHW
@@ -105,7 +104,6 @@ image = cv2.imread("cat.jpg").astype(np.float32)
 transform = T.Compose([
     T.Resize(256),
     T.CenterCrop(224),
-   # T.Normalize(mean=[103.530, 116.280, 123.675], std=[57.375, 57.120, 58.395]),  # BGR
     T.ToMode("CHW"),
 ])
 processed_img = transform.apply(image)[np.newaxis, :]  # CHW -> 1CHW
