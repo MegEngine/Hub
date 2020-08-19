@@ -12,6 +12,7 @@ github-link: https://github.com/megvii-model/FunnelAct
 ```python
 import megengine.hub
 model = megengine.hub.load('megvii-model/funnelact', 'resnet50_frelu', pretrained=True)
+# model = megengine.hub.load('megvii-model/funnelact', 'shufflenet_v2_x0_5', pretrained=True)
 model.eval()
 ```
 <!-- section: zh_CN -->
@@ -38,7 +39,6 @@ image = cv2.imread("cat.jpg").astype(np.float32)
 transform = T.Compose([
     T.Resize(256),
     T.CenterCrop(224),
-   # T.Normalize(mean=[103.530, 116.280, 123.675], std=[57.375, 57.120, 58.395]),  # BGR
     T.ToMode("CHW"),
 ])
 processed_img = transform.apply(image)[np.newaxis, :]  # CHW -> 1CHW
@@ -91,7 +91,6 @@ image = cv2.imread("cat.jpg").astype(np.float32)
 transform = T.Compose([
     T.Resize(256),
     T.CenterCrop(224),
-   # T.Normalize(mean=[103.530, 116.280, 123.675], std=[57.375, 57.120, 58.395]),  # BGR
     T.ToMode("CHW"),
 ])
 processed_img = transform.apply(image)[np.newaxis, :]  # CHW -> 1CHW
