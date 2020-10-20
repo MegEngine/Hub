@@ -2,8 +2,8 @@
 template: hub1
 title: RetinaNet
 summary:
-    en_US: RetinaNet pre-trained on COCO
-    zh_CN: RetinaNet (COCO预训练权重）
+    en_US: RetinaNet pre-trained on COCO2017
+    zh_CN: RetinaNet (COCO2017预训练权重）
 author: MegEngine Team
 tags: [vision, detection]
 github-link: https://github.com/MegEngine/Models/tree/master/official/vision/detection
@@ -41,36 +41,28 @@ except: urllib.request.urlretrieve(url, filename)
 
 # Read and pre-process the image
 import cv2
+import megengine as mge
+
 image = cv2.imread("cat.jpg")
-
 data, im_info = models_api.DetEvaluator.process_inputs(image, 800, 1333)
-model.inputs["image"].set_value(data)
-model.inputs["im_info"].set_value(im_info)
-
-from megengine import jit
-@jit.trace(symbolic=True)
-def infer():
-    predictions = model(model.inputs)
-    return predictions
-
-print(infer())
+predictions = model(image=mge.tensor(data), im_info=mge.tensor(im_info))
+print(predictions)
 ```
 
 ### 模型描述
 
-目前我们提供了retinanet的预训练模型, 在coco验证集上的结果如下：
+目前我们提供了在COCO2017数据集上预训练的RetinaNet模型, 性能如下：
 
-| model                                 | mAP<br>@5-95 |
-| ---                                   | :---:        |
-| retinanet-res50-coco1x-800size        | 36.4         |
-| retinanet-res50-coco1x-800size-syncbn | 37.1         |
+| model                             | mAP<br>@5-95 |
+| ---                               | :---:        |
+| retinanet-res50-coco-1x-800size   | 37.0         |
+| retinanet-res101-coco-2x-800size  | 41.1         |
+| retinanet-resx101-coco-2x-800size | 42.7         |
 
 ### 参考文献
 
-- [Focal Loss for Dense Object Detection](https://arxiv.org/pdf/1708.02002) Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, Piotr Dollár. Proceedings of the IEEE international conference on computer vision. 2017: 2980-2988.
-- [Microsoft COCO: Common Objects in Context](https://arxiv.org/pdf/1405.0312.pdf)  Lin, Tsung-Yi and Maire, Michael and Belongie, Serge and Hays, James and Perona, Pietro and Ramanan, Deva and Dollár, Piotr and Zitnick, C Lawrence
-Lin T Y, Maire M, Belongie S, et al. European conference on computer vision. Springer, Cham, 2014: 740-755.
-
+- [Focal Loss for Dense Object Detection](https://arxiv.org/abs/1708.02002) Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He and Piotr Dollár. IEEE International Conference on Computer Vision (ICCV), 2017.
+- [Microsoft COCO: Common Objects in Context](https://arxiv.org/abs/1405.0312) Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr Dollár, and C Lawrence Zitnick. European Conference on Computer Vision (ECCV), 2014.
 
 <!-- section: en_US -->
 
@@ -89,32 +81,25 @@ except: urllib.request.urlretrieve(url, filename)
 
 # Read and pre-process the image
 import cv2
+import megengine as mge
+
 image = cv2.imread("cat.jpg")
-
 data, im_info = models_api.DetEvaluator.process_inputs(image, 800, 1333)
-model.inputs["image"].set_value(data)
-model.inputs["im_info"].set_value(im_info)
-
-from megengine import jit
-@jit.trace(symbolic=True)
-def infer():
-    predictions = model(model.inputs)
-    return predictions
-
-print(infer())
+predictions = model(image=mge.tensor(data), im_info=mge.tensor(im_info))
+print(predictions)
 ```
 
 ### Model Description
 
-Currently we provide a `retinanet` model which is pretrained on `COCO2017` training set. The mAP on `COCO2017` val set can be found in following table.
+Currently we provide RetinaNet models pretrained on COCO2017 dataset. The performance can be found in following table.
 
-| model                                 | mAP<br>@5-95 |
-| ---                                   | :---:        |
-| retinanet-res50-coco1x-800size        | 36.4         |
-| retinanet-res50-coco1x-800size-syncbn | 37.1         |
+| model                             | mAP<br>@5-95 |
+| ---                               | :---:        |
+| retinanet-res50-coco-1x-800size   | 37.0         |
+| retinanet-res101-coco-2x-800size  | 41.1         |
+| retinanet-resx101-coco-2x-800size | 42.7         |
 
 ### References
 
-- [Focal Loss for Dense Object Detection](https://arxiv.org/pdf/1708.02002) Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, Piotr Dollár. Proceedings of the IEEE international conference on computer vision. 2017: 2980-2988.
-- [Microsoft COCO: Common Objects in Context](https://arxiv.org/pdf/1405.0312.pdf)  Lin, Tsung-Yi and Maire, Michael and Belongie, Serge and Hays, James and Perona, Pietro and Ramanan, Deva and Dollár, Piotr and Zitnick, C Lawrence
-Lin T Y, Maire M, Belongie S, et al. European conference on computer vision. Springer, Cham, 2014: 740-755.
+- [Focal Loss for Dense Object Detection](https://arxiv.org/abs/1708.02002) Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He and Piotr Dollár. IEEE International Conference on Computer Vision (ICCV), 2017.
+- [Microsoft COCO: Common Objects in Context](https://arxiv.org/abs/1405.0312) Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr Dollár, and C Lawrence Zitnick. European Conference on Computer Vision (ECCV), 2014.

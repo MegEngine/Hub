@@ -1,9 +1,9 @@
 ---
 template: hub1
-title: Faster-RCNN
+title: ATSS
 summary:
-    en_US: Faster-RCNN pre-trained on COCO2017
-    zh_CN: Faster-RCNN (COCO2017预训练权重）
+    en_US: ATSS pre-trained on COCO2017
+    zh_CN: ATSS (COCO2017预训练权重）
 author: MegEngine Team
 tags: [vision, detection]
 github-link: https://github.com/MegEngine/Models/tree/master/official/vision/detection
@@ -13,7 +13,7 @@ github-link: https://github.com/MegEngine/Models/tree/master/official/vision/det
 from megengine import hub
 model = hub.load(
     "megengine/models",
-    "faster_rcnn_res50_coco_1x_800size",
+    "atss_res50_coco_1x_800size",
     pretrained=True,
     use_cache=False,
 )
@@ -51,18 +51,17 @@ print(predictions)
 
 ### 模型描述
 
-目前我们提供了在COCO2017数据集上预训练的Faster R-CNN模型, 性能如下：
+目前我们提供了在COCO2017数据集上预训练的ATSS模型, 性能如下：
 
-| model                               | mAP<br>@5-95 |
-| ---                                 | :---:        |
-| faster-rcnn-res50-1x-800size        | 38.0         |
-| faster-rcnn-res101-coco-2x-800size  | 42.5         |
-| faster-rcnn-resx101-coco-2x-800size | 43.6         |
+| model                        | mAP<br>@5-95 |
+| ---                          | :---:        |
+| atss-res50-coco-1x-800size   | 40.1         |
+| atss-res101-coco-2x-800size  | 44.5         |
+| atss-resx101-coco-2x-800size | 45.9         |
 
 ### 参考文献
 
-- [Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks](https://arxiv.org/abs/1506.01497) Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun. Neural Information Processing Systems (NIPS), 2015.
-- [Feature Pyramid Networks for Object Detection](https://arxiv.org/abs/1612.03144) Tsung-Yi Lin, Piotr Dollár, Ross Girshick, Kaiming He, Bharath Hariharan and Serge Belongie. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017.
+- [Bridging the Gap Between Anchor-based and Anchor-free Detection via Adaptive Training Sample Selection](https://arxiv.org/abs/1912.02424) Shifeng Zhang, Cheng Chi, Yongqiang Yao, Zhen Lei, and Stan Z. Li. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2020.
 - [Microsoft COCO: Common Objects in Context](https://arxiv.org/abs/1405.0312) Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr Dollár, and C Lawrence Zitnick. European Conference on Computer Vision (ECCV), 2014.
 
 <!-- section: en_US -->
@@ -92,16 +91,15 @@ print(predictions)
 
 ### Model Description
 
-Currently we provide Faster R-CNN models pretrained on COCO2017 dataset. The performance can be found in following table.
+Currently we provide ATSS models pretrained on COCO2017 dataset. The performance can be found in following table.
 
-| model                               | mAP<br>@5-95 |
-| ---                                 | :---:        |
-| faster-rcnn-res50-1x-800size        | 38.0         |
-| faster-rcnn-res101-coco-2x-800size  | 42.5         |
-| faster-rcnn-resx101-coco-2x-800size | 43.6         |
+| model                        | mAP<br>@5-95 |
+| ---                          | :---:        |
+| atss-res50-coco-1x-800size   | 40.1         |
+| atss-res101-coco-2x-800size  | 44.5         |
+| atss-resx101-coco-2x-800size | 45.9         |
 
 ### References
 
-- [Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks](https://arxiv.org/abs/1506.01497) Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun. Neural Information Processing Systems (NIPS), 2015.
-- [Feature Pyramid Networks for Object Detection](https://arxiv.org/abs/1612.03144) Tsung-Yi Lin, Piotr Dollár, Ross Girshick, Kaiming He, Bharath Hariharan and Serge Belongie. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017.
+- [Bridging the Gap Between Anchor-based and Anchor-free Detection via Adaptive Training Sample Selection](https://arxiv.org/abs/1912.02424) Shifeng Zhang, Cheng Chi, Yongqiang Yao, Zhen Lei, and Stan Z. Li. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2020.
 - [Microsoft COCO: Common Objects in Context](https://arxiv.org/abs/1405.0312) Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr Dollár, and C Lawrence Zitnick. European Conference on Computer Vision (ECCV), 2014.
