@@ -68,6 +68,7 @@ cv2.imwrite("vis_skeleton.jpg", canvas)
 
 ### 模型描述
 本目录使用了在COCO val2017上的Human AP为56.4的人体检测结果，最后在COCO val2017上人体关节点估计结果为
+
 |Methods|Backbone|Input Size| AP | Ap .5 | AP .75 | AP (M) | AP (L) | AR | AR .5 | AR .75 | AR (M) | AR (L) |
 |---|:---:|---|---|---|---|---|---|---|---|---|---|---|
 | MSPN_4stage |MSPN|256x192| 0.752 | 0.900 | 0.819 | 0.716 | 0.825 | 0.819 | 0.943 | 0.875 | 0.770 | 0.887 |
