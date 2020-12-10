@@ -3,7 +3,7 @@ template: hub1
 title: Generative Adversarial Networks
 summary:
     en_US: GAN pre-trained on Cifar10
-    zh_CN: 生产对抗网络（Cifar10 预训练权重）
+    zh_CN: 生成对抗网络（Cifar10 预训练权重）
 author: MegEngine Team
 tags: [vision, gan]
 github-link: https://github.com/MegEngine/Models/tree/master/official/vision/gan
