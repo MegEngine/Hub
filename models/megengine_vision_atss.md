@@ -13,7 +13,7 @@ github-link: https://github.com/MegEngine/Models/tree/master/official/vision/det
 from megengine import hub
 model = hub.load(
     "megengine/models",
-    "atss_res50_coco_1x_800size",
+    "atss_res50_coco_3x_800size",
     pretrained=True,
     use_cache=False,
 )
@@ -55,9 +55,11 @@ print(predictions)
 
 | model                        | mAP<br>@5-95 |
 | ---                          | :---:        |
-| atss-res50-coco-1x-800size   | 40.1         |
-| atss-res101-coco-2x-800size  | 44.5         |
-| atss-resx101-coco-2x-800size | 45.9         |
+| atss-res18-coco-3x-800size   | 38.3         |
+| atss-res34-coco-3x-800size   | 41.5         |
+| atss-res50-coco-3x-800size   | 42.6         |
+| atss-res101-coco-3x-800size  | 44.7         |
+| atss-resx101-coco-2x-800size | 45.6         |
 
 ### 参考文献
 
@@ -95,9 +97,11 @@ Currently we provide ATSS models pretrained on COCO2017 dataset. The performance
 
 | model                        | mAP<br>@5-95 |
 | ---                          | :---:        |
-| atss-res50-coco-1x-800size   | 40.1         |
-| atss-res101-coco-2x-800size  | 44.5         |
-| atss-resx101-coco-2x-800size | 45.9         |
+| atss-res18-coco-3x-800size   | 38.3         |
+| atss-res34-coco-3x-800size   | 41.5         |
+| atss-res50-coco-3x-800size   | 42.6         |
+| atss-res101-coco-3x-800size  | 44.7         |
+| atss-resx101-coco-2x-800size | 45.6         |
 
 ### References
 

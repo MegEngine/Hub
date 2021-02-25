@@ -13,7 +13,7 @@ github-link: https://github.com/MegEngine/Models/tree/master/official/vision/det
 from megengine import hub
 model = hub.load(
     "megengine/models",
-    "fcos_res50_coco_1x_800size",
+    "fcos_res50_coco_3x_800size",
     pretrained=True,
     use_cache=False,
 )
@@ -55,9 +55,11 @@ print(predictions)
 
 | model                        | mAP<br>@5-95 |
 | ---                          | :---:        |
-| fcos-res50-coco-1x-800size   | 39.7         |
-| fcos-res101-coco-2x-800size  | 44.1         |
-| fcos-resx101-coco-2x-800size | 44.9         |
+| fcos-res18-coco-3x-800size   | 37.6         |
+| fcos-res34-coco-3x-800size   | 41.0         |
+| fcos-res50-coco-3x-800size   | 42.2         |
+| fcos-res101-coco-3x-800size  | 44.3         |
+| fcos-resx101-coco-2x-800size | 44.8         |
 
 ### 参考文献
 
@@ -95,9 +97,11 @@ Currently we provide FCOS models pretrained on COCO2017 dataset. The performance
 
 | model                        | mAP<br>@5-95 |
 | ---                          | :---:        |
-| fcos-res50-coco-1x-800size   | 39.7         |
-| fcos-res101-coco-2x-800size  | 44.1         |
-| fcos-resx101-coco-2x-800size | 44.9         |
+| fcos-res18-coco-3x-800size   | 37.6         |
+| fcos-res34-coco-3x-800size   | 41.0         |
+| fcos-res50-coco-3x-800size   | 42.2         |
+| fcos-res101-coco-3x-800size  | 44.3         |
+| fcos-resx101-coco-2x-800size | 44.8         |
 
 ### References
 
