@@ -13,7 +13,7 @@ github-link: https://github.com/MegEngine/Models/tree/master/official/vision/det
 from megengine import hub
 model = hub.load(
     "megengine/models",
-    "freeanchor_res50_coco_1x_800size",
+    "freeanchor_res50_coco_3x_800size",
     pretrained=True,
     use_cache=False,
 )
@@ -53,14 +53,17 @@ print(predictions)
 
 目前我们提供了在COCO2017数据集上预训练的FreeAnchor模型, 性能如下：
 
-| model                             | mAP<br>@5-95 |
-| ---                               | :---:        |
-| freeanchor-res50-coco-1x-800size  | 38.9         |
-| freeanchor-res101-coco-2x-800size | 43.3         |
+| model                              | mAP<br>@5-95 |
+| ---                                | :---:        |
+| freeanchor-res18-coco-3x-800size   | 38.1         |
+| freeanchor-res34-coco-3x-800size   | 41.1         |
+| freeanchor-res50-coco-3x-800size   | 42.1         |
+| freeanchor-res101-coco-3x-800size  | 43.9         |
+| freeanchor-resx101-coco-2x-800size | 44.9         |
 
 ### 参考文献
 
-- [FreeAnchor: Learning to Match Anchors for Visual Object Detection](https://arxiv.org/abs/1909.02466) Xiaosong Zhang, Fang Wan, Chang Liu, Rongrong Ji and Qixiang Ye. Neural Information Processing Systems (NeurIPS), 2019.  
+- [FreeAnchor: Learning to Match Anchors for Visual Object Detection](https://arxiv.org/abs/1909.02466) Xiaosong Zhang, Fang Wan, Chang Liu, Rongrong Ji and Qixiang Ye. Neural Information Processing Systems (NeurIPS), 2019.
 - [Microsoft COCO: Common Objects in Context](https://arxiv.org/abs/1405.0312) Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr Dollár, and C Lawrence Zitnick. European Conference on Computer Vision (ECCV), 2014.
 
 <!-- section: en_US -->
@@ -92,11 +95,15 @@ print(predictions)
 
 Currently we provide RetinaNet models pretrained on COCO2017 dataset. The performance can be found in following table.
 
-| model                             | mAP<br>@5-95 |
-| ---                               | :---:        |
-| freeanchor-res50-coco-1x-800size  | 38.9         |
-| freeanchor-res101-coco-2x-800size | 43.3         |
+| model                              | mAP<br>@5-95 |
+| ---                                | :---:        |
+| freeanchor-res18-coco-3x-800size   | 38.1         |
+| freeanchor-res34-coco-3x-800size   | 41.1         |
+| freeanchor-res50-coco-3x-800size   | 42.1         |
+| freeanchor-res101-coco-3x-800size  | 43.9         |
+| freeanchor-resx101-coco-2x-800size | 44.9         |
 
 ### References
-- [FreeAnchor: Learning to Match Anchors for Visual Object Detection](https://arxiv.org/abs/1909.02466) Xiaosong Zhang, Fang Wan, Chang Liu, Rongrong Ji and Qixiang Ye. Neural Information Processing Systems (NeurIPS), 2019.  
+
+- [FreeAnchor: Learning to Match Anchors for Visual Object Detection](https://arxiv.org/abs/1909.02466) Xiaosong Zhang, Fang Wan, Chang Liu, Rongrong Ji and Qixiang Ye. Neural Information Processing Systems (NeurIPS), 2019.
 - [Microsoft COCO: Common Objects in Context](https://arxiv.org/abs/1405.0312) Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr Dollár, and C Lawrence Zitnick. European Conference on Computer Vision (ECCV), 2014.

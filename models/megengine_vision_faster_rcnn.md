@@ -13,7 +13,7 @@ github-link: https://github.com/MegEngine/Models/tree/master/official/vision/det
 from megengine import hub
 model = hub.load(
     "megengine/models",
-    "faster_rcnn_res50_coco_1x_800size",
+    "faster_rcnn_res50_coco_3x_800size",
     pretrained=True,
     use_cache=False,
 )
@@ -55,9 +55,11 @@ print(predictions)
 
 | model                               | mAP<br>@5-95 |
 | ---                                 | :---:        |
-| faster-rcnn-res50-1x-800size        | 38.0         |
-| faster-rcnn-res101-coco-2x-800size  | 42.5         |
-| faster-rcnn-resx101-coco-2x-800size | 43.6         |
+| faster-rcnn-res18-coco-3x-800size   | 35.7         |
+| faster-rcnn-res34-coco-3x-800size   | 39.6         |
+| faster-rcnn-res50-coco-3x-800size   | 40.1         |
+| faster-rcnn-res101-coco-3x-800size  | 42.6         |
+| faster-rcnn-resx101-coco-2x-800size | 44.1         |
 
 ### 参考文献
 
@@ -96,9 +98,11 @@ Currently we provide Faster R-CNN models pretrained on COCO2017 dataset. The per
 
 | model                               | mAP<br>@5-95 |
 | ---                                 | :---:        |
-| faster-rcnn-res50-1x-800size        | 38.0         |
-| faster-rcnn-res101-coco-2x-800size  | 42.5         |
-| faster-rcnn-resx101-coco-2x-800size | 43.6         |
+| faster-rcnn-res18-coco-3x-800size   | 35.7         |
+| faster-rcnn-res34-coco-3x-800size   | 39.6         |
+| faster-rcnn-res50-coco-3x-800size   | 40.1         |
+| faster-rcnn-res101-coco-3x-800size  | 42.6         |
+| faster-rcnn-resx101-coco-2x-800size | 44.1         |
 
 ### References
 
