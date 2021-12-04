@@ -11,16 +11,16 @@ github-link: https://github.com/MegEngine/Models/tree/master/official/nlp/bert
 
 ```python
 import megengine.hub as hub
-model = megengine.hub.load("megengine/models", "wwm_cased_L-24_H-1024_A-16", pretrained=True)
+model = megengine.hub.load("megengine/models", "chinese_L_12_H_768_A_12", pretrained=True)
 # or any of these variants
-# model = megengine.hub.load("megengine/models", "wwm_cased_L-24_H-1024_A-16", pretrained=True)
-# model = megengine.hub.load("megengine/models", "wwm_uncased_L-24_H-1024_A-16", pretrained=True)
-# model = megengine.hub.load("megengine/models", "cased_L-12_H-768_A-12", pretrained=True)
-# model = megengine.hub.load("megengine/models", "cased_L-24_H-1024_A-16", pretrained=True)
-# model = megengine.hub.load("megengine/models", "uncased_L-12_H-768_A-12", pretrained=True)
-# model = megengine.hub.load("megengine/models", "uncased_L-24_H-1024_A-16", pretrained=True)
-# model = megengine.hub.load("megengine/models", "chinese_L-12_H-768_A-12", pretrained=True)
-# model = megengine.hub.load("megengine/models", "multi_cased_L-12_H-768_A-12", pretrained=True)
+# model = megengine.hub.load("megengine/models", "cased_L_12_H_768_A_12", pretrained=True)
+# model = megengine.hub.load("megengine/models", "cased_L_24_H_1024_A_16", pretrained=True)
+# model = megengine.hub.load("megengine/models", "chinese_L_12_H_768_A_12", pretrained=True)
+# model = megengine.hub.load("megengine/models", "multi_cased_L_12_H_768_A_12", pretrained=True)
+# model = megengine.hub.load("megengine/models", "uncased_L_12_H_768_A_12", pretrained=True)
+# model = megengine.hub.load("megengine/models", "uncased_L_24_H_1024_A_16", pretrained=True)
+# model = megengine.hub.load("megengine/models", "wwm_cased_L_24_H_1024_A_16", pretrained=True)
+# model = megengine.hub.load("megengine/models", "wwm_uncased_L_24_H_1024_A_16", pretrained=True)
 ```
 
 <!-- section: zh_CN -->
