@@ -6,7 +6,7 @@ summary:
     zh_CN: MSPN（COCO 预训练权重）
 author: MegEngine Team
 tags: [vision, keypoints]
-github-link: https://github.com/MegEngine/Models/tree/master/official/vision/keypoints
+github-link: https://github.com/megvii-research/MSPN
 ---
 
 ```python3
