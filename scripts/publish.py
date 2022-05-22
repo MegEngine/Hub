@@ -1,5 +1,6 @@
 import os
 import json
+from pathlib import Path
 
 import requests
 from loguru import logger
@@ -22,46 +23,23 @@ def load_config():
     Config.HeaderAuthValue = os.environ["HEADERAUTHVALUE"]
 
 
-def load_models():
-    info = json.loads(open(os.path.join(Config.ModelDistDir, Config.ModelJsonPath), "rb").read())
-    tags = [
-        {
-            "key": key,
-            "value": info["tags"][key],
-        } for key in info["tags"]
-    ]
-
-    model_ids = [
-        _["id"] for _ in info["models"]
-    ]
-    return model_ids, tags
-
-
-def load_model_details():
-    models_ids, tags = load_models()
-    dir = os.path.join(Config.ModelDistDir, Config.ModelDetailPath)
-    models = []
-    for model_id in models_ids:
-        models.append(json.loads(open(os.path.join(dir, f"{model_id}.json"), "rb").read()))
-
-    return models, tags
-
-
 def sync_server():
-    models, tags = load_model_details()
-    headers = {
-        Config.HeaderAuthName: Config.HeaderAuthValue,
-    }
+    filelist = [Config.ModelJsonPath]
+    filelist.extend(
+        map(
+            lambda fname: os.path.join(Config.ModelDetailPath, fname),
+            os.listdir(
+                os.path.join(Config.ModelDistDir, Config.ModelDetailPath))))
 
-    for model in models:
-        logger.info(f"model: {json.dumps(model)}")
-        resp = requests.post(f"{Config.Endpoint}/api/v1/models", json=model, headers=headers)
-        logger.info(f"resp.code: {resp.status_code}, resp.content: {resp.content}")
-
-    for tag in tags:
-        logger.info(f"tag: {json.dumps(tag)}")
-        resp = requests.post(f"{Config.Endpoint}/api/v1/tags", json=tag, headers=headers)
-        logger.info(f"resp.code: {resp.status_code}, resp.content: {resp.content}")
+    headers = {Config.HeaderAuthName: Config.HeaderAuthValue}
+    for fname in filelist:
+        data = Path(os.path.join(Config.ModelDistDir, fname)).read_text()
+        resp = requests.put(f"{Config.Endpoint}{fname}",
+                            headers=headers,
+                            json=json.loads(data))
+        logger.info(
+            f"resp.code: {resp.status_code}, resp.content: {resp.content}")
+        resp.raise_for_status()
 
 
 if __name__ == "__main__":
