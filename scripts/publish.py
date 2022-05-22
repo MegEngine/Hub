@@ -34,7 +34,10 @@ def sync_server():
     headers = {Config.HeaderAuthName: Config.HeaderAuthValue}
     for fname in filelist:
         data = Path(os.path.join(Config.ModelDistDir, fname)).read_text()
-        resp = requests.put(f"{Config.Endpoint}{fname}",
+        base, ext = os.path.splitext(fname)
+        if ext != ".json":
+            continue
+        resp = requests.put(f"{Config.Endpoint}{base}",
                             headers=headers,
                             json=json.loads(data))
         logger.info(
