@@ -39,6 +39,7 @@ def sync_server():
                             json=json.loads(data))
         logger.info(
             f"resp.code: {resp.status_code}, resp.content: {resp.content}")
+        resp.raise_for_status()
 
 
 if __name__ == "__main__":
