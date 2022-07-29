@@ -1,5 +1,5 @@
 black==19.10b0
-mistune==2.0.0a1
+mistune==2.0.3
 attrs==19.1.0
 PyYAML==5.4
 requests==2.25.1
